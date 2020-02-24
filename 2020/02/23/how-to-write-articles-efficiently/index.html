@@ -17,12 +17,12 @@
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Odeinjul">
     
-    <meta name="keywords" content="hexo,oi-learning,hexo-blog,physics,game">
+    <meta name="keywords" content="博客,软件,hexo,oi-learning,hexo-blog,physics,game">
     
     <meta name="description" content="A simple blog by Odeinjul.To witness the time & record my progress;">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Odeinjul&#39;s Blog</title>
+    <title>如何高效地写博客 · Odeinjul&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Odeinjul&#39;s Blog</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">如何高效地写博客</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Odeinjul's Blog</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/random/2560x863)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Odeinjul's Blog
-            <!-- 文章页  -->
+            如何高效地写博客
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                　北有极光，南是异乡。
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "随笔">随笔</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">330</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/02/23</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,269 +399,68 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/23/how-to-write-articles-efficiently/" >
-            
-                <span>如何高效地写博客</span>
-        </a>
-        <div class="abstract-content">
-            <p>如何在写博客时做到全神贯注？你可能需要以下软件/网站的帮助。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随笔">随笔</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>如何在写博客时做到全神贯注？你可能需要以下软件/网站的帮助。</p>
+<a id="more"></a>
+<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>你需要一个强大的编辑器，UI好看，功能强大。进可终端调试，魔改主题；退可静心写文，记录生活。<br>因此，你只需要下载<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a>即可满足以上所有需求，因为他是<strong>宇宙第一编辑器</strong>(不要打我<br>VSC支持 语法高亮/内置终端/无限托展/自定义主题，良心且免费，是一款开源轻量级全平台的全能编辑器。<br><img src="https://s2.ax1x.com/2020/02/23/319vi4.png" alt="Visual Studio Code"><br>下面给出一些关于VSC的常用页面：</p>
+<ul>
+<li>拓展:<a href="https://marketplace.visualstudio.com/VSCode" target="_blank" rel="noopener">https://marketplace.visualstudio.com/VSCode</a></li>
+<li>主题:<a href="https://vscodethemes.com/" target="_blank" rel="noopener">https://vscodethemes.com/</a></li>
+</ul>
+<p><strong>推荐拓展</strong>：</p>
+<ol>
+<li>vscode-icon 为文件加上图标！</li>
+<li>Path Intellisense 自动路径补全，再也不用反复记路径了！</li>
+<li>filesize 于右下角显示当前文件大小。</li>
+<li>Bracket Pair Colorizer 让括号拥有独立的颜色，易于区分。</li>
+<li>Indent-Rainbow 带颜色的缩进。</li>
+<li>Polacode 代码生成好看的截图图片<br>…</li>
+</ol>
+<h2 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h2><p>敬请百度/谷歌搜索一个适合自己的，要点<strong>稳定！！</strong><br>我在用的是这个: <a href="https://imgchr.com/" target="_blank" rel="noopener">https://imgchr.com/</a><br><img src="https://s2.ax1x.com/2020/02/24/38Pc4O.png" alt="imgchr"><br>这篇文章的所有图片都是是托管在这个图床上的。</p>
+<h2 id="画图工具"><a href="#画图工具" class="headerlink" title="画图工具"></a>画图工具</h2><p>简洁，免费的流程图工具也是必不可少的<br>推荐: <a href="https://processon.com/" target="_blank" rel="noopener">ProcessOn</a><br><img src="https://s2.ax1x.com/2020/02/24/38P8H0.png" alt="ProcessOn"></p>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/23/how-to-modify-hexo-theme-archer/" >
-            
-                <span>Archer主题魔改不完全指南</span>
-        </a>
-        <div class="abstract-content">
-            <p>这篇文章主要是关于安装完hexo-theme-archer后对其进行的一些魔改，<br>参考了<a href="https://github.com/fi3ework/hexo-theme-archer/wiki" target="_blank" rel="noopener">The hexo-theme-archer wiki</a>。</p>
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://odeinjul.github.io">Odeinjul</a>
+            <p>原文链接：<a href="http://odeinjul.github.io/2020/02/23/how-to-write-articles-efficiently/">http://odeinjul.github.io/2020/02/23/how-to-write-articles-efficiently/</a>
+            <p>发表日期：<a href="http://odeinjul.github.io/2020/02/23/how-to-write-articles-efficiently/">February 23rd 2020, 2:18:22 pm</a>
+            <p>更新日期：<a href="http://odeinjul.github.io/2020/02/23/how-to-write-articles-efficiently/">February 24th 2020, 12:06:57 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Hexo">Hexo</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/23/how-to-restart/" >
-            
-                <span>Restart</span>
-        </a>
-        <div class="abstract-content">
-            <p>今天距离这个博客的第一次部署，已经过去了532天。</p>
-<p>一年半里写过不少文章，有些还蛮不错的，但是因为与自己目前方向不符全删掉了（</p>
-<p>这次更新主要将pv从0记起并且寻找了一个新的主题： hexo-theme-archer，它无论是设计还是功能都比较完善，唯一美中不足的一点就是原仓库主人不愿意继续更新了。接下来估计会写一个有关hexo-theme-archer的额外功能的说明，稍微记录下如何物尽其用地使用此主题。</p>
-<p>这次应该不会半途而废了吧 :)</p>
-<p>2018.08.01-&gt;2020.02.23 532days.<br>Restart.</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随笔">随笔</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/02/10/how-to-use-hexo-helper-live2d/" >
-            
-                <span>hexo-helper-live2d插件食用指北</span>
-        </a>
-        <div class="abstract-content">
-            <blockquote>
-<p><strong>忠告：使用 live2d 插件的话会使网页加载速度变慢，请酌情使用。</strong></p>
-</blockquote>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">hexo-helper-liv2d</a> 是一个在您博客上添加 live2d 模型(<em>看板娘！</em> )的插件，可以十分方便地在网页上展示 live2d 模型。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Hexo">Hexo</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/06/how-to-increase-pv/" >
-            
-                <span>如何提升博客访问量？</span>
-        </a>
-        <div class="abstract-content">
-            <p>众所周知，博客的访问量可以算是唯一一个给予博客撰写人一丝丝鼓励的数值(Adsense的余额好像也算),<br>可我们常常要面对个位数的页面访问量，心里不免会有疑惑<em>我写这博客真的有用么？</em><br>对于以上的疑问，想在此记录几个提升页面访问量的方法。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随笔">随笔</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/01/Hello_Wolrd/" >
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            <p>这只是一个测试而已啦！<br>欢迎来到 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> ! 这是第一个测试的界面. 转到 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> 以查看更多信息. 如果你在使用hexo的时候有任何问题, 你可以在 <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> 找到答案,或者你可以在 <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a> 问问小伙伴.</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Fubuki.png >
-    <div class="profile-name">Odeinjul</div>
-    
-    <div class="profile-signature">
-        witness time
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+        </li>
+        <li class="previous">
             
-                <a href="mailto:odeinjul@gmail.com" class="iconfont-archer email" title=email ></a>
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/02/23/how-to-modify-hexo-theme-archer/" title= "Archer主题魔改不完全指南">
+                    <div class="prevTitle">Archer主题魔改不完全指南</div>
+                </a>
             
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <a href="//github.com/odeinjul" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.google.com target="_black">Idonthaveafriend :)</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -689,6 +536,24 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑器"><span class="toc-number">1.</span> <span class="toc-text">编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图床"><span class="toc-number">2.</span> <span class="toc-text">图床</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#画图工具"><span class="toc-number">3.</span> <span class="toc-text">画图工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#END"><span class="toc-number">4.</span> <span class="toc-text">END</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -892,6 +757,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
