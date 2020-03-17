@@ -285,7 +285,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">432</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">433</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -417,23 +417,23 @@ height:50vh;
         <p>Aseprite 是目前较为主流的像素画软件，十分良心的提供了<a href="https://github.com/aseprite/aseprite" target="_blank" rel="noopener">源码</a>.<br>于是我们可以通过自己编译源代码来获得一份自用的可执行版本。<br>本篇文章将主要讲解Mac下的编译过程。<br>如果您觉得麻烦或是有钱不在乎，可以前往 <a href="https://store.steampowered.com/app/431730/Aseprite/" target="_blank" rel="noopener">Steam</a> 或者 <a href="Aseprite.org">Aseprite.org</a> 自行购买（前者 48 元，后者 15 美金）</p>
 <a id="more"></a>
 <p>首先感谢 <a href="https://github.com/aseprite/aseprite/blob/master/INSTALL.md" target="_blank" rel="noopener">Aseprite官方文档</a> 的详细指导。</p>
-<h3 id="需要的东西"><a href="#需要的东西" class="headerlink" title="需要的东西"></a>需要的东西</h3><ul>
+<h2 id="需要的东西"><a href="#需要的东西" class="headerlink" title="需要的东西"></a>需要的东西</h2><ul>
 <li>最新版的CMake（≥3.14)</li>
 <li>Ninja </li>
 <li>一份编译版本的 <code>aseprite-m81</code> </li>
 <li>macOS10.15 SDK</li>
 <li>Xcode 11.2.1</li>
 </ul>
-<h3 id="获取源代码"><a href="#获取源代码" class="headerlink" title="获取源代码"></a>获取源代码</h3><p>您可以获取源代码，以 <code>Aseprite-v1.x-Source.zip</code> 从最新的 Aseprite 版本下载文件（在这种情况下，请按照.zip文件内的编译说明进行操作）：<br><a href="https://github.com/aseprite/aseprite/releases" target="_blank" rel="noopener">https://github.com/aseprite/aseprite/releases</a></p>
-<h3 id="安装-CMake"><a href="#安装-CMake" class="headerlink" title="安装 CMake"></a>安装 CMake</h3><p>在官网可以轻松找到链接 <a href="https://cmake.org/download/" target="_blank" rel="noopener">CMake下载</a><br>你会得到一个 <code>.dmg</code> 文件，先安装它并打开，在菜单栏里的 <code>Tools/How to Install For Command Line Use</code> 可以知道如何安装到终端，跟着做就行。</p>
-<h3 id="安装Ninja"><a href="#安装Ninja" class="headerlink" title="安装Ninja"></a>安装Ninja</h3><p>你可以在这里找到下载：<a href="https://github.com/ninja-build/ninja/releases" target="_blank" rel="noopener">Ninja</a></p>
-<h3 id="一份编译版本的aseprite-m81"><a href="#一份编译版本的aseprite-m81" class="headerlink" title="一份编译版本的aseprite-m81"></a>一份编译版本的<code>aseprite-m81</code></h3><p>你可以在这里找到下载： <a href="https://github.com/aseprite/skia#readme" target="_blank" rel="noopener">Aerprite</a></p>
-<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><ul>
+<h2 id="获取源代码"><a href="#获取源代码" class="headerlink" title="获取源代码"></a>获取源代码</h2><p>您可以获取源代码，以 <code>Aseprite-v1.x-Source.zip</code> 从最新的 Aseprite 版本下载文件（在这种情况下，请按照.zip文件内的编译说明进行操作）：<br><a href="https://github.com/aseprite/aseprite/releases" target="_blank" rel="noopener">https://github.com/aseprite/aseprite/releases</a></p>
+<h2 id="安装-CMake"><a href="#安装-CMake" class="headerlink" title="安装 CMake"></a>安装 CMake</h2><p>在官网可以轻松找到链接 <a href="https://cmake.org/download/" target="_blank" rel="noopener">CMake下载</a><br>你会得到一个 <code>.dmg</code> 文件，先安装它并打开，在菜单栏里的 <code>Tools/How to Install For Command Line Use</code> 可以知道如何安装到终端，跟着做就行。</p>
+<h2 id="安装Ninja"><a href="#安装Ninja" class="headerlink" title="安装Ninja"></a>安装Ninja</h2><p>你可以在这里找到下载：<a href="https://github.com/ninja-build/ninja/releases" target="_blank" rel="noopener">Ninja</a></p>
+<h2 id="一份已编译版本的aseprite-m81"><a href="#一份已编译版本的aseprite-m81" class="headerlink" title="一份已编译版本的aseprite-m81"></a>一份已编译版本的<code>aseprite-m81</code></h2><p>你可以在这里找到下载： <a href="https://github.com/aseprite/skia#readme" target="_blank" rel="noopener">Aerprite</a></p>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><ul>
 <li>获取源代码，把它放在一个文件夹中，然后执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> aseprite</span><br><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake \</span><br><span class="line">  -DCMAKE_BUILD_TYPE=RelWithDebInfo \</span><br><span class="line">  -DCMAKE_OSX_ARCHITECTURES=x86_64 \</span><br><span class="line">  -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \</span><br><span class="line">  -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk \</span><br><span class="line">  -DLAF_BACKEND=skia \</span><br><span class="line">  -DSKIA_DIR=<span class="variable">$HOME</span>/deps/skia \</span><br><span class="line">  -DSKIA_LIBRARY_DIR=<span class="variable">$HOME</span>/deps/skia/out/Release-x64 \</span><br><span class="line">  -G Ninja \</span><br><span class="line">  ..</span><br><span class="line">ninja aseprite</span><br></pre></td></tr></table></figure>
-即可。<blockquote>
-<p>在这种情况下 <code>$HOME/deps/skia</code> 是 Skia 的编译或者下载目录。<br>确保 <code>CMAKE_OSX_SYSROO</code>指向正确的目录，本例中为 <code>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk</code><br>如果您有 Retina 显示屏，请查看：<a href="https://github.com/aseprite/aseprite/issues/589" target="_blank" rel="noopener">https://github.com/aseprite/aseprite/issues/589</a></p>
-</blockquote>
-</li>
+即可。</li>
+<li>在这种情况下 <code>$HOME/deps/skia</code> 是 Skia 的编译或者下载目录。</li>
+<li>确保 <code>CMAKE_OSX_SYSROO</code>指向正确的目录<br>本例中为 <code>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk</code></li>
+<li>如果您有 Retina 显示屏，请查看：<a href="https://github.com/aseprite/aseprite/issues/589" target="_blank" rel="noopener">https://github.com/aseprite/aseprite/issues/589</a></li>
 </ul>
 
     </article>
@@ -443,7 +443,7 @@ height:50vh;
             <p>原文作者：<a href="http://odeinjul.github.io">Odeinjul</a>
             <p>原文链接：<a href="http://odeinjul.github.io/2020/03/17/how-to-use-aerprite-for-free/">http://odeinjul.github.io/2020/03/17/how-to-use-aerprite-for-free/</a>
             <p>发表日期：<a href="http://odeinjul.github.io/2020/03/17/how-to-use-aerprite-for-free/">March 17th 2020, 10:19:48 am</a>
-            <p>更新日期：<a href="http://odeinjul.github.io/2020/03/17/how-to-use-aerprite-for-free/">March 17th 2020, 1:57:45 pm</a>
+            <p>更新日期：<a href="http://odeinjul.github.io/2020/03/17/how-to-use-aerprite-for-free/">March 17th 2020, 2:01:30 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -568,7 +568,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#需要的东西"><span class="toc-number">1.</span> <span class="toc-text">需要的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取源代码"><span class="toc-number">2.</span> <span class="toc-text">获取源代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-CMake"><span class="toc-number">3.</span> <span class="toc-text">安装 CMake</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Ninja"><span class="toc-number">4.</span> <span class="toc-text">安装Ninja</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一份编译版本的aseprite-m81"><span class="toc-number">5.</span> <span class="toc-text">一份编译版本的aseprite-m81</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译"><span class="toc-number">6.</span> <span class="toc-text">编译</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#需要的东西"><span class="toc-number">1.</span> <span class="toc-text">需要的东西</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取源代码"><span class="toc-number">2.</span> <span class="toc-text">获取源代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-CMake"><span class="toc-number">3.</span> <span class="toc-text">安装 CMake</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Ninja"><span class="toc-number">4.</span> <span class="toc-text">安装Ninja</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一份已编译版本的aseprite-m81"><span class="toc-number">5.</span> <span class="toc-text">一份已编译版本的aseprite-m81</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译"><span class="toc-number">6.</span> <span class="toc-text">编译</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
