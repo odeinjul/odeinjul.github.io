@@ -359,6 +359,41 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/04/21/link-your-domain-to-your-minecraft-server/" >
+            
+                <span>将你的域名解析到你的 Minecraft 服务器</span>
+        </a>
+        <div class="abstract-content">
+            前置准备：一个 DNS 解析商，例如 DNSPod，以及一个你自己的域名
+
+新建一条A记录，主机字段填写你想要的前缀，例如mc，记录值则填写你的服务器IP地址，如果你的服务器采用的是默认端口(25565)，那么你现在就可以使用mc.yourdomain.com来连接到服务器了。
+你的服务器换了端口？那么你还需添加一条SRV记录，如果你希望玩家使用xxx。yourdomain.com连接服务器，那就在协议字段填写_tcp.xxx.，在名称一栏填写你A记录的主机字段，在目标字段填写完整域名，在优先级和权重字段填0，在端口字段填写你的服务器端口即可。
+
+
+A字段是@时，目标只需填写yourdo...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "服务器">服务器</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/04/20/use-your-own-domain-for-github-pages/" >
             
                 <span>在 Github Pages 上使用你自己的域名</span>
@@ -606,9 +641,22 @@ ping  YOURNAME.github.io
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 11
+        Total : 12
         </div>
         <!-- search  -->
         
@@ -621,6 +669,11 @@ ping  YOURNAME.github.io
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "/2020/04/21/link-your-domain-to-your-minecraft-server/" >将你的域名解析到你的 Minecraft 服务器</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -709,6 +762,8 @@ ping  YOURNAME.github.io
         <span class="sidebar-tag-name" data-tags="教程"><span class="iconfont-archer">&#xe606;</span>教程</span>
     
         <span class="sidebar-tag-name" data-tags="网站"><span class="iconfont-archer">&#xe606;</span>网站</span>
+    
+        <span class="sidebar-tag-name" data-tags="服务器"><span class="iconfont-archer">&#xe606;</span>服务器</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
