@@ -1,0 +1,71 @@
+baseURL = 'https://odeinjul.github.io/'
+languageCode = 'en-us'
+title = "Blog"
+theme = 'typo'
+
+[taxonomies]
+tag = 'tags'
+
+[params]
+# Meta description
+description = "Blog"
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'Hello!'
+homeIntroContent = """
+This is **Shurang Wu**.
+
+I am a senior undergraduate student majoring in Computer Science at the \\
+[University of Science and Technology of China](https://ustc.edu.cn) (**USTC**). 
+
+My research focuses on the reliability of **operating systems**.
+
+Currently, I am a student intern at the 
+[University of Illinois Urbana-Champaign](https://illinois.edu) (**UIUC**), where I am advised by [Tianyin Xu](https://tianyin.github.io/). 
+
+You can find my CV [here](https://odeinjul.github.io/CV_2024.pdf).
+"""
+
+# Collection to display on home
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 30
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+breadcrumbs = true
+
+[[params.social]]
+name = "github"
+url = "https://github.com/odeinjul"
+
+[[params.social]]
+name = "email"
+url = "mailto:wu_sr@mail.ustc.edu.cn"
+
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "posts"
+url = "/posts"
+
+[[params.menu]]
+name = "about"
+url = "/about"
+
+# Syntax highlight on code blocks
+[markup]
+[markup.highlight]
+style = 'algol'
