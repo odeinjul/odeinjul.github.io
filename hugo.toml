@@ -48,6 +48,10 @@ name = "github"
 url = "https://github.com/odeinjul"
 
 [[params.social]]
+name = "twitter"
+url = "https://x.com/shurangwu"
+
+[[params.social]]
 name = "email"
 url = "mailto:wu_sr@mail.ustc.edu.cn"
 
@@ -60,6 +64,10 @@ url = "/"
 [[params.menu]]
 name = "posts"
 url = "/posts"
+
+[[params.menu]]
+name = "teaching"
+url = "/teaching"
 
 [[params.menu]]
 name = "about"
