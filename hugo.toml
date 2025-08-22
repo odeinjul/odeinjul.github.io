@@ -18,18 +18,17 @@ hideHeader = false
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hello!'
 homeIntroContent = """
-This is **Shurang Wu**.
+This is **Shurang Wu**.  
 
-I am a senior undergraduate student majoring in Computer Science at the \\
-[University of Science and Technology of China](https://ustc.edu.cn) (**USTC**). 
-And I will join the [University of Texas at Austin for my PhD](https://www.utexas.edu/) in Fall 2025.
+I am a first-year PhD student in Computer Science at the University of Texas at Austin, 
+advised by Professor Vijay Chidambaram. 
+My research focuses on operating system reliability.  
 
-My research focuses on the reliability of **operating systems**.
+I received my Bachelor's degree in Computer Science from the University of Science and Technology of China in 2025. 
+In 2024, I also served as a student intern at the University of Illinois Urbana-Champaign, 
+working on the correctness of the Kubernetes scheduler’s design and implementation under the guidance of [Professor Tianyin Xu](https://tianyin.github.io/).  
 
-Previously, I was a student intern at the 
-[University of Illinois Urbana-Champaign](https://illinois.edu) (**UIUC**), where I was advised by [Tianyin Xu](https://tianyin.github.io/). 
-
-You can find my CV [here](https://odeinjul.github.io/CV_2024.pdf). 
+You can find my CV [here](https://odeinjul.github.io/CV_2024.pdf).  
 """
 
 # Collection to display on home

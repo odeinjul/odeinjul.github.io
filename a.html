@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Dreamscape: A Retro RPG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-blue: #00ffff;
+            --neon-green: #00ff00;
+            --dark-bg: #111;
+            --light-text: #eee;
+        }
+
+        body {
+            font-family: 'Press Start 2P', monospace;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Game Container */
+        .game-container {
+            width: 95%;
+            max-width: 800px;
+            background-color: #000;
+            border: 4px solid var(--neon-blue);
+            box-shadow: 0 0 20px var(--neon-blue), inset 0 0 10px var(--neon-blue);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Game Title */
+        h1 {
+            color: var(--neon-pink);
+            text-align: center;
+            text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+            font-size: 1.5em;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        /* Game Log Area */
+        .game-log {
+            height: 300px;
+            background-color: #000;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green), inset 0 0 7px var(--neon-green);
+            padding: 15px;
+            overflow-y: auto;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.5;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Input and Button Container */
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* User Input Field */
+        .user-input {
+            flex-grow: 1;
+            background-color: #000;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            font-family: inherit;
+            font-size: 1em;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px var(--neon-blue), inset 0 0 5px var(--neon-blue);
+            outline: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .user-input:focus {
+            box-shadow: 0 0 15px var(--neon-blue), inset 0 0 7px var(--neon-blue);
+        }
+
+        /* Action Button */
+        .action-button {
+            background-color: var(--neon-pink);
+            color: var(--dark-bg);
+            border: none;
+            font-family: inherit;
+            font-size: 1em;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px var(--neon-pink);
+            transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+
+        .action-button:hover {
+            background-color: #ff33ff;
+            box-shadow: 0 0 15px #ff33ff;
+        }
+
+        .action-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .game-container {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .game-log {
+                height: 250px;
+            }
+            
+            .input-container {
+                flex-direction: column;
+            }
+
+            .action-button {
+                width: 100%;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>NEON DREAMSCAPE</h1>
+        <div class="game-log" id="game-log"></div>
+        <div class="input-container">
+            <input type="text" class="user-input" id="user-input" placeholder="> Type your action here...">
+            <button class="action-button" id="action-button">ENTER</button>
+        </div>
+    </div>
+
+    <script>
+        // --- Game Setup and Data ---
+        // Get references to DOM elements
+        const gameLog = document.getElementById('game-log');
+        const userInput = document.getElementById('user-input');
+        const actionButton = document.getElementById('action-button');
+
+        // Game state variables
+        let currentRoomId = 'start';
+        const playerInventory = {};
+
+        // Game data structure for rooms, items, and NPCs
+        const gameData = {
+            start: {
+                description: "You stand in a luminous, pink-hued room. Strange, geometric shapes float in the air. To the north, a doorway pulses with a soft blue light. To the west, a narrow corridor is bathed in green.",
+                exits: {
+                    north: 'blue_room',
+                    west: 'green_corridor'
+                },
+                items: ['glowing_orb'],
+                npcs: {}
+            },
+            blue_room: {
+                description: "This room is filled with shifting, liquid-like blue light. A single, silent figure stands in the center, their form indistinct. There is a strange, humming box on the floor. The exit is to the south.",
+                exits: {
+                    south: 'start'
+                },
+                items: ['humming_box'],
+                npcs: {
+                    figure: "The silent figure stares at you. They don't seem to react to your presence. What are they thinking?"
+                }
+            },
+            green_corridor: {
+                description: "The walls of this corridor are covered in intricate, looping patterns of neon green light. The air here feels cold. At the end of the corridor, a single, pulsating red key hovers in the air. The path leads east back to the main room.",
+                exits: {
+                    east: 'start'
+                },
+                items: ['red_key'],
+                npcs: {}
+            },
+            // Add more rooms here to expand the game!
+        };
+
+        // --- Core Game Functions ---
+
+        /**
+         * Prints a message to the game log.
+         * @param {string} message The message to display.
+         * @param {string} color The color of the text (optional).
+         */
+        function printToLog(message, color = 'var(--light-text)') {
+            const span = document.createElement('span');
+            span.textContent = '> ' + message + '\n';
+            span.style.color = color;
+            gameLog.appendChild(span);
+            // Auto-scroll to the bottom of the log
+            gameLog.scrollTop = gameLog.scrollHeight;
+        }
+
+        /**
+         * Updates the game display with the current room's information.
+         */
+        function updateDisplay() {
+            const room = gameData[currentRoomId];
+            if (!room) {
+                printToLog("You are lost in a void. Something is wrong.", 'var(--neon-pink)');
+                return;
+            }
+
+            printToLog(room.description);
+            
+            // Display available exits
+            const exits = Object.keys(room.exits).join(', ');
+            if (exits) {
+                printToLog(`Available exits: ${exits}.`);
+            }
+
+            // Display visible items
+            if (room.items.length > 0) {
+                const items = room.items.join(', ');
+                printToLog(`You see the following items: ${items}.`);
+            }
+        }
+
+        /**
+         * Handles the player's input command.
+         * @param {string} command The command entered by the player.
+         */
+        function handleCommand(command) {
+            command = command.trim().toLowerCase();
+            printToLog('You: ' + command, 'var(--neon-blue)');
+
+            // Split command into verb and noun
+            const parts = command.split(' ');
+            const verb = parts[0];
+            const noun = parts.slice(1).join(' ');
+
+            const room = gameData[currentRoomId];
+
+            switch (verb) {
+                case 'go':
+                    if (room.exits[noun]) {
+                        currentRoomId = room.exits[noun];
+                        updateDisplay();
+                    } else {
+                        printToLog(`You can't go that way.`, 'var(--neon-pink)');
+                    }
+                    break;
+                case 'look':
+                case 'examine':
+                    if (noun) {
+                        const roomItems = gameData[currentRoomId].items;
+                        const roomNpcs = gameData[currentRoomId].npcs;
+                        if (roomItems.includes(noun)) {
+                             printToLog(`It's a ${noun}. It seems important.`, 'var(--neon-green)');
+                        } else if (roomNpcs[noun]) {
+                            printToLog(roomNpcs[noun], 'var(--neon-green)');
+                        } else {
+                            printToLog(`You don't see a "${noun}" here.`, 'var(--neon-pink)');
+                        }
+                    } else {
+                        updateDisplay(); // 'look' by itself shows the room description again
+                    }
+                    break;
+                case 'take':
+                    const itemsInRoom = room.items;
+                    if (itemsInRoom.includes(noun)) {
+                        // Add item to inventory
+                        playerInventory[noun] = true;
+                        // Remove item from the room
+                        const itemIndex = itemsInRoom.indexOf(noun);
+                        itemsInRoom.splice(itemIndex, 1);
+                        printToLog(`You take the ${noun}.`, 'var(--neon-green)');
+                    } else {
+                        printToLog(`You can't take that.`, 'var(--neon-pink)');
+                    }
+                    break;
+                case 'inventory':
+                    const items = Object.keys(playerInventory);
+                    if (items.length > 0) {
+                        printToLog(`Your inventory: ${items.join(', ')}.`);
+                    } else {
+                        printToLog("Your inventory is empty.");
+                    }
+                    break;
+                case 'help':
+                    printToLog("Available commands: go [direction], look, examine [thing], take [item], inventory, help.", 'var(--neon-blue)');
+                    break;
+                default:
+                    printToLog("I don't understand that command. Type 'help' for a list of commands.", 'var(--neon-pink)');
+                    break;
+            }
+        }
+
+        // --- Event Listeners ---
+        // Handle input when the button is clicked
+        actionButton.addEventListener('click', () => {
+            const command = userInput.value;
+            if (command) {
+                handleCommand(command);
+                userInput.value = ''; // Clear the input field
+            }
+        });
+
+        // Handle input when the Enter key is pressed
+        userInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                actionButton.click();
+            }
+        });
+
+        // Initial game start
+        document.addEventListener('DOMContentLoaded', () => {
+            printToLog("Welcome to Neon Dreamscape. The air hums with a quiet energy.", 'var(--neon-green)');
+            printToLog("You awaken with no memory of how you got here. What will you do?");
+            updateDisplay();
+        });
+    </script>
+</body>
+</html>
