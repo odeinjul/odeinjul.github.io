@@ -41,7 +41,10 @@ listSummaries = true
 listDateFormat = '2 Jan 2006'
 
 # Breadcrumbs
-breadcrumbs = true
+[params.breadcrumbs]
+enabled = true
+showCurrentPage = true
+home = "~"
 
 [[params.social]]
 name = "github"
@@ -77,3 +80,10 @@ url = "/about"
 [markup]
 [markup.highlight]
 style = 'algol'
+
+# Unami Analysis
+[params.umami]
+enable = true
+websiteId = "aeda3a8d-29b2-437f-9cc8-0dc043fed346"
+jsLocation = "https://cloud.umami.is/script.js"
+

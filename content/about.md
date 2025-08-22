@@ -1,6 +1,7 @@
 +++
 title = 'About'
 date = 2024-09-01T18:43:56-05:00
+hidePagination: true
 +++
 
 This is Shurang Wu.

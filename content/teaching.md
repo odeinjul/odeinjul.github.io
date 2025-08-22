@@ -1,6 +1,7 @@
 +++
 title = 'Teaching'
 date = 2025-08-21T22:04:36-05:00
+hidePagination: true
 +++
 
 - **Teaching Assistant**, [CS 375: Compilers](https://www.cs.utexas.edu/~novak/cs375.html)  
